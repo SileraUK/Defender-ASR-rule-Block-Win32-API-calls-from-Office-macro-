@@ -1,0 +1,7 @@
+#Retrieve all events from devices with the ASR rule in “block” & “audit” mode
+
+DeviceEvents
+| where Timestamp > datetime(2023-01-13)
+| where ActionType contains "AsrOfficeMacroWin32ApiCallsBlocked"
+| summarize by Timestamp, DeviceName, DeviceId, FileName, FolderPath, ActionType, AdditionalFields
+| sort by Timestamp asc
