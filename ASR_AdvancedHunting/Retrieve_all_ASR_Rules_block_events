@@ -1,0 +1,10 @@
+#Retrieve all block events from devices with the ASR rule in “Block” mode
+
+DeviceEvents
+| where Timestamp >= datetime(2023-01-13)
+| where ActionType contains "AsrOfficeMacroWin32ApiCallsBlocked"
+| extend JSON = parse_json(AdditionalFields)
+| extend isAudit = tostring(JSON.IsAudit)
+| where isAudit == "false"
+| summarize by Timestamp, DeviceName, DeviceId, FileName, FolderPath, ActionType, AdditionalFields
+| sort by Timestamp asc
