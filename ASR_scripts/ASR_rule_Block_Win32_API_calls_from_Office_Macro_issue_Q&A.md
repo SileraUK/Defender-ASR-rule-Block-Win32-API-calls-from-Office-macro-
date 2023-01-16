@@ -61,7 +61,7 @@ Yes, it is safe to turn back on ASR rule for security intelligence version 1.381
 
 <table>
 <tr>
-<td> Scenario </td> <td> Query   </td> <td> Github link  </td>
+<td> Scenario </td> <td> Query </td> <td> Github link  </td>
 </tr>
 <tr>
 <td> Retrieve all block events from devices with the ASR rule in “Block” mode </td>
@@ -75,7 +75,8 @@ DeviceEvents
 | extend JSON = parse_json(AdditionalFields) 
 | extend isAudit = tostring(JSON.IsAudit) 
 | where isAudit == "false" 
-| summarize by Timestamp, DeviceName, DeviceId, FileName, FolderPath, ActionType, AdditionalFields 
+| summarize by Timestamp, DeviceName, DeviceId, FileName,
+ FolderPath, ActionType, AdditionalFields 
 | sort by Timestamp asc 
 ```
 
@@ -106,7 +107,8 @@ DeviceEvents
 | extend JSON = parse_json(AdditionalFields) 
 | extend isAudit = tostring(JSON.IsAudit) 
 | where isAudit == "false" 
-| summarize by Timestamp, DeviceId, FileName, FolderPath, ActionType, AdditionalFields, isAudit 
+| summarize by Timestamp, DeviceId, FileName, FolderPath,
+ ActionType, AdditionalFields, isAudit 
 | sort by Timestamp asc 
 ```
 
@@ -134,7 +136,8 @@ DeviceEvents
 DeviceEvents
 | where Timestamp > datetime(2023-01-13) 
 | where ActionType contains "AsrOfficeMacroWin32ApiCallsBlocked" 
-| summarize by Timestamp, DeviceName, DeviceId, FileName, FolderPath, ActionType, AdditionalFields 
+| summarize by Timestamp, DeviceName, DeviceId, FileName, FolderPath,
+ ActionType, AdditionalFields 
 | sort by Timestamp asc 
 ```
 
