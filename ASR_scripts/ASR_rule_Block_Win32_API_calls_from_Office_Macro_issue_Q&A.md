@@ -48,7 +48,7 @@ Security intelligence version 1.381.2164.0 or newer contain the fix for this iss
 Yes, it is safe to turn back on ASR rule for security intelligence version 1.381.2164.0 or newer.
 >>
 
-10. **What is end user experience on impacted devices?**
+10. **What is end user experience on impacted devices?**\
 * Application shortcuts are removed, leading to inability to launch common and LOB applications via Start Menu / Taskbar / Desktop.  
 * When such impaired shortcut is clicked, an end user is presented with an error dialog that the item cannot be open/ application cannot be found.  
 * Application icons on Taskbar are replaced with a placeholder icon – indicating that the shortcut is no longer valid. 
@@ -179,22 +179,22 @@ https://github.com/microsoft/MDE-PowerBI-Templates/blob/master/ASR_AdvancedHunti
 * A3/E3: Microsoft is exploring options for A3/E3/Defender for Business customers. 
 >>
 
-12.	**Steps to mitigate the issue on impacted devices**
+12.	**Steps to mitigate the issue on impacted devices**\
 Impacted customers need to: 
-1) Ensure across full Windows estate security intelligence version 1.381.2164.0 or newer (see Q13)
-2) Restore Start menu links to the most common artifacts using Microsoft recommended steps (see bullets 14-18)
-3) Expand Microsoft guidance to include organization-specific line of business (LOB) applications
+    1) Ensure across full Windows estate security intelligence version 1.381.2164.0 or newer (see Q13)
+    2) Restore Start menu links to the most common artifacts using Microsoft recommended steps (see bullets 14-18)
+    3) Expand Microsoft guidance to include organization-specific line of business (LOB) applications
 >>
 
-13.	**How to update security intelligence version**
+13.	**How to update security intelligence version**\
 Security updates management options are enumerated in [Manage how and where Microsoft Defender Antivirus receives updates] https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/manage-protection-updates-microsoft-defender-antivirus?view=o365-worldwide. This documentation covers options like Microsoft Update (~Windows Update), WSUS, SUS (SCCM+WSUS), MMPC (https://aka.ms/wdsi), UNC share. 
 >>
 
-14.	**How to recover/reconstruct deleted links**
+14.	**How to recover/reconstruct deleted links**\
        Deleted .lnk artifacts can be recovered/reconstructed either using a remote management solution or manually by the local device user. 
 >>
 
-15.	**How to recover deleted links using remote management tools**
+15.	**How to recover deleted links using remote management tools**\
     To restore Start shortcuts, run following script on impacted devices.
 https://github.com/microsoft/MDE-PowerBI-Templates/blob/master/ASR_scripts/AddShortcutsV1.ps1
 **Note: This script must be run in elevated mode (either admin or system).**
@@ -206,7 +206,7 @@ https://github.com/microsoft/MDE-PowerBI-Templates/blob/master/ASR_scripts/AddSh
     * Group Policy Preference – https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn581922(v=ws.11)#client-side-extensions-1
 >>
 
-16.	**How to recover/reconstruct deleted links manually**
+16.	**How to recover/reconstruct deleted links manually**\
     To recreate Start Menu shortcuts manually, run repair for affected applications from Settings. Running repair will recreate deleted links.  The application repair is effective for productivity programs like Microsoft 365, Microsoft Edge, and Microsoft Visual Studio.
 
     To repair an application, an end user can follow these steps: 
@@ -242,8 +242,7 @@ Run the following command from system session. There will be no UI shown to the 
     *%programfiles%\Common Files\microsoft shared\ClickToRun\OfficeClickToRun.exe scenario=Repair RepairType=QuickRepair DisplayLevel=false forceappshutdown=true*
 >>
 
-17.	**What links (.lnk) are covered by Microsoft v1 restoration script?**
-
+17.	**What links (.lnk) are covered by Microsoft v1 restoration script?**\
     The following application shortcuts, taken from telemetry as the most commonly impacted applications, will be recreated on Start menu after running AddShortcutsV1.ps1 restoration script. Links will be added only for applications present on a device. 
 
     > "Adobe Acrobat"\
@@ -293,13 +292,13 @@ Run the following command from system session. There will be no UI shown to the 
 * The script has to be modified for non-English Windows versions to account for localized application installation location.  
 >
 
-19.**How to gradually roll out security intelligence updates**
+19.**How to gradually roll out security intelligence updates**\
 As a safe deployment practice, organizations should consider gradual rollout of security intelligence updates. Review this documentation for detailed guidance on gradual rollout of security updates:
     [Manage the gradual rollout process for Microsoft Defender updates]
     (https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/manage-gradual-rollout?view=o365-worldwide)
 >
 
-20.**How to gradually roll out security intelligence updates**
+20.**How to gradually roll out security intelligence updates**\
 ASR rules deployment mechanism does not currently provide a rollback option. The fastest route to mitigate an ASR rule issue is to configure the problematic ASR rule to run in "audit" mode.
 [Enable attack surface reduction rules]
 (https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/enable-attack-surface-reduction?view=o365-worldwide)
