@@ -36,7 +36,7 @@ Devices where ASR rule “Block Win32 API calls from Office macro” was configu
 No, device with this specific ASR rule set to “audit” or not configured were not impacted by the data loss.
 >>
 
-7. **Was this issue also present in Cloud-delivered Protection service (formerly Microsoft Active Protection Service (MAPS)) dynamic signature? **\
+7. **Was this issue also present in Cloud-delivered Protection service (formerly Microsoft Active Protection Service (MAPS)) dynamic signature?**\
 No, CP (MAPS) service was not impacted, only in the security intelligence channel was impacted.
 >>
 
@@ -53,7 +53,7 @@ Yes, it is safe to turn back on ASR rule for security intelligence version 1.381
 * When such impaired shortcut is clicked, an end user is presented with an error dialog that the item cannot be open/ application cannot be found.  
 * Application icons on Taskbar are replaced with a placeholder icon – indicating that the shortcut is no longer valid. 
 * In File Explorer, impacted shortcut files may be removed.
-* In selected cases, file types other than .lnk can be impacted
+* Initial reports indicate that file types other than .lnk can be impacted. So far, the top observed non .lnk file extensions are library-ms, temp, cs, ps1, and url. Support channels are actively monitored to assess any additional impact. 
 >>
 
 11.	**How can remote administrator determine what devices are impacted?**\
@@ -168,7 +168,7 @@ DeviceEvents
 <td>
 
 ```json
-https://github.com/microsoft/MDE-PowerBI-Templates/blob/master/ASR_AdvancedHunting/
+(https://github.com/microsoft/MDE-PowerBI-Templates/blob/master/ASR_AdvancedHunting/Retrieve_count_of_devices_with_ASR_rule_in_block_%26_audit)
 ```
 
 </td>
@@ -298,7 +298,7 @@ As a safe deployment practice, organizations should consider gradual rollout of 
     (https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/manage-gradual-rollout?view=o365-worldwide)
 >
 
-20.**How to gradually roll out security intelligence updates**\
+20.**Is there a rollback mechanism for ASR rules?**\
 ASR rules deployment mechanism does not currently provide a rollback option. The fastest route to mitigate an ASR rule issue is to configure the problematic ASR rule to run in "audit" mode.
 [Enable attack surface reduction rules]
 (https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/enable-attack-surface-reduction?view=o365-worldwide)
