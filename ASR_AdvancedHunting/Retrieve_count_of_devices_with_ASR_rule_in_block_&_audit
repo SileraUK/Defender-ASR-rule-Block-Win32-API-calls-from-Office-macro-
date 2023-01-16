@@ -1,0 +1,6 @@
+#Retrieve count of devices with the ASR rule in “block” & “audit” mode - when device count exceeds 10K
+DeviceEvents 
+| where Timestamp >= datetime(2023-01-13) 
+| where ActionType contains "AsrOfficeMacroWin32ApiCallsBlocked" 
+| summarize deviceCount = dcount(DeviceId) 
+| extend IsMoreThanTenThousand = iif(deviceCount> 10000, True, False) 
