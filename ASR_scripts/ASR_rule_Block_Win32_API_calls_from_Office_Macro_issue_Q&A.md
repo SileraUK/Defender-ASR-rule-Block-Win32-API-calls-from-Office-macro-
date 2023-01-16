@@ -48,7 +48,7 @@ Security intelligence version 1.381.2164.0 or newer contain the fix for this iss
 Yes, it is safe to turn back on ASR rule for security intelligence version 1.381.2164.0 or newer.
 >>
 
-10. **What is end user experience on impacted devices?**\
+10. **What is end user experience on impacted devices?**
 * Application shortcuts are removed, leading to inability to launch common and LOB applications via Start Menu / Taskbar / Desktop.  
 * When such impaired shortcut is clicked, an end user is presented with an error dialog that the item cannot be open/ application cannot be found.  
 * Application icons on Taskbar are replaced with a placeholder icon – indicating that the shortcut is no longer valid. 
@@ -56,7 +56,7 @@ Yes, it is safe to turn back on ASR rule for security intelligence version 1.381
 * Initial reports indicate that file types other than .lnk can be impacted. So far, the top observed non .lnk file extensions are library-ms, temp, cs, ps1, and url. Support channels are actively monitored to assess any additional impact. 
 >>
 
-11.	**How can remote administrator determine what devices are impacted?**\
+11.	**How can remote administrator determine what devices are impacted?**
 * A5/E5: administrators with access to MDE Advanced Hunting can run the following AH queries to identify impacted devices: 
 
 <table>
